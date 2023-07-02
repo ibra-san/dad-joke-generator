@@ -23,10 +23,23 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <!--Favicon links End-->
-
+    <link rel="stylesheet" href="./style.css">
     <title>Dad Jokes Generator</title>
 </head>
 <body>
     
+    <div id="joke_container">
+        <div id="emoji_container">
+            <img id="laughing_emoji" src="" alt="Laughing Emoji">
+        </div>
+        
+        <div id="joke_text_containe">
+            <p id="joke_text"> Insert jokes from API here</p>
+        </div>
+
+        <button id="fetch_joke_button">Generate a dad joke</button>
+    </div>
+
+    <script src="./app.js"></script>
 </body>
 </html>
