@@ -13,22 +13,19 @@ const displayJoke = (isSuccess, joke) => {
 
 const fetchJoke = async () => { 
     
-    const options = {
-        method: 'GET',
-        url: 'https://dad-jokes.p.rapidapi.com/random/joke',
-        headers: {
-            'X-RapidAPI-Key': 'de6f8acc1dmsh058a90d60d5ac1ap1833b1jsn68532b595424',
-            'X-RapidAPI-Host': 'dad-jokes.p.rapidapi.com'
+    const options = fetch('http://localhost:8000/joke', { 
+        method: "POST", 
+        header: { 
+            "Content-Type":"application/json", 
+            "Accept": "application/json"
         }
-
-    };
-
+    }) 
+    
     try {
-        const response = await axios.request(options);
-        console.log(response.data);
-        displayJoke(response.data.success, response.data.body)
+        const response = await axios.request(options)
+        console.log(response.data)
     } catch (error) {
-        console.error(error);
+        console.error(error)
     }
 
 }
