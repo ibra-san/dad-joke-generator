@@ -13,20 +13,21 @@ const displayJoke = (isSuccess, joke) => {
 
 const fetchJoke = async () => { 
     
-    const options = fetch('http://localhost:8000/joke', { 
+    fetch('http://localhost:8000/joke', { 
         method: "POST", 
-        header: { 
+        headers: { 
             "Content-Type":"application/json", 
             "Accept": "application/json"
         }
-    }) 
-    
-    try {
-        const response = await axios.request(options)
-        console.log(response.data)
-    } catch (error) {
-        console.error(error)
-    }
+    })  .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            displayJoke(data.success, data.body) 
+        })
+        .catch((error) => { 
+            console.error("Error:", error)
+
+        })
 
 }
 
