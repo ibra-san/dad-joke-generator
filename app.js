@@ -13,7 +13,7 @@ const displayJoke = (isSuccess, joke) => {
 
 const fetchJoke = async () => { 
     
-    fetch('http://localhost:8000', { 
+    fetch('https://dad-joke-generator-app.onrender.com', { 
         method: "POST", 
         headers: { 
             "Content-Type":"application/json", 
