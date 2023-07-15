@@ -1,5 +1,6 @@
 
-const fetchJokeButton = document.querySelector("#fetch_joke_button");
+const fetchJokeButton = document.querySelector("#fetch_joke_button")
+const toggle_preloader = document.querySelector("#toggle_preloader")
 
 
 const displayJoke = (isSuccess, joke) => { 
@@ -19,8 +20,10 @@ const fetchJoke = async () => {
             "Content-Type":"application/json", 
             "Accept": "application/json"
         }
-    })  .then(response => response.json())
+    }) .then(toggle_preloader.classList.add("preloader"))
+        .then(response => response.json())
         .then(data => {
+            toggle_preloader.classList.remove("preloader")
             console.log(data)
             displayJoke(data.success, data.body) 
         })

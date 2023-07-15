@@ -51,9 +51,24 @@ body {
     margin: 20px 0px;
     padding: 0px 15px;
 }
+
 #joke_text { 
     color: black;
     font-weight: 500;
+}
+
+#preloader_container { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+    max-width: 500px;
+}
+
+.preloader { 
+    width: 50px;
+    height: 50px;
+    background: url(preloader.gif) no-repeat center center;
 }
 
 #fetch_joke_button { 
@@ -115,6 +130,10 @@ footer > a {
 
 @media only screen and (max-width: 500px) { 
     #joke_container { 
+        max-width: 300px;
+    }
+
+    #preloader_container { 
         max-width: 300px;
     }
 
