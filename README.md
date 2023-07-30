@@ -13,5 +13,3 @@ This is simple dad joke generator app.
 
 ## Contributions and special thanks: 
 * This app was built by imsan 
-
-// insert project video here as well
